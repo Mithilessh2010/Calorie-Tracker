@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Track your daily calorie intake and burned calories with this clean, modern calorie tracking web app." />
+  <meta name="author" content="Your Name" />
+  <title>Calorie Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Calorie Tracker</h1>
+      <p class="subtitle">Manage your daily calorie intake and exercise effortlessly</p>
+    </header>
+
+    <section class="status-display">
+      <h2>Daily Summary</h2>
+      <div class="summary-box">
+        <p><strong>Calorie Limit:</strong> <span id="limit">1500</span> cal</p>
+        <p><strong>Calories Consumed:</strong> <span id="consumed">0</span> cal</p>
+        <p><strong>Calories Burned:</strong> <span id="burned">0</span> cal</p>
+        <p><strong>Remaining Calories:</strong> <span id="remaining">1500</span> cal</p>
+      </div>
+    </section>
+
+    <section class="input-section">
+      <h3>Add Food Intake</h3>
+      <input type="text" id="food-name" placeholder="Enter food name" aria-label="Food Name" />
+      <input type="number" id="food-calories" placeholder="Calories" aria-label="Food Calories" />
+      <button onclick="addFood()">Add Food</button>
+    </section>
+
+    <section class="list-section">
+      <h3>Foods Eaten</h3>
+      <ul id="food-list" aria-label="List of foods eaten"></ul>
+    </section>
+
+    <section class="input-section">
+      <h3>Log Exercise</h3>
+      <input type="number" id="burned-calories" placeholder="Calories Burned" aria-label="Calories Burned" />
+      <button onclick="addBurnedCalories()">Log Exercise</button>
+    </section>
+
+    <section class="toggle-mode">
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Calorie Tracker. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
